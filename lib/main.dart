@@ -6,7 +6,6 @@ import 'package:notes/pages/app.dart';
 import 'package:notes/pages/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'helpers/globals.dart' as globals;
 
 late SharedPreferences prefs;
 void main() async {

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:notes/helpers/globals.dart' as globals;
 
 class AboutPage extends StatefulWidget {
   @override

@@ -15,7 +15,6 @@ import 'package:notes/pages/cardnote.dart';
 import 'package:notes/pages/edit.dart';
 import 'package:notes/pages/login.dart';
 
-import 'package:notes/helpers/globals.dart' as globals;
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required this.title})

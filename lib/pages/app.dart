@@ -6,7 +6,6 @@ import 'package:notes/common/constants.dart';
 import 'package:notes/pages/home_page.dart';
 import 'package:notes/pages/about_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:notes/helpers/globals.dart' as globals;
 
 
 class App extends StatefulWidget {
