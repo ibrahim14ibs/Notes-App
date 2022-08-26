@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/constants/constants.dart';
 import 'package:notes/models/notemodel.dart';
 
 class CardNotes extends StatelessWidget {
@@ -17,6 +18,7 @@ class CardNotes extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Card(
+        color: kPrimaryColor,
         child: ListTile(
           title: Text("${notemodel.notesTitle}"),
           subtitle: Text("${notemodel.notesContent}"),

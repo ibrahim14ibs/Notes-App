@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:notes/common/constants.dart';
-import 'package:notes/pages/app.dart';
-import 'package:notes/pages/success.dart';
+import 'package:notes/app/auth/success.dart';
+import 'package:notes/components/crud.dart';
+import 'package:notes/constants/constants.dart';
 
-import '../crud.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);

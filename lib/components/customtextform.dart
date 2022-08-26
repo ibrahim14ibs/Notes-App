@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CustTextFormSign extends StatelessWidget {
-  final String hint ; 
-  final String? Function(String?) valid ; 
-  final TextEditingController mycontroller ; 
-  const CustTextFormSign({Key? key, required this.hint, required this.mycontroller, required this.valid}) : super(key: key);
+  final String hint;
+  final String? Function(String?) valid;
+  final TextEditingController mycontroller;
+  const CustTextFormSign(
+      {Key? key,
+      required this.hint,
+      required this.mycontroller,
+      required this.valid})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +17,9 @@ class CustTextFormSign extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 10),
       child: TextFormField(
         validator: valid,
+        keyboardType: TextInputType.multiline,
+        maxLines: null,
+        textCapitalization: TextCapitalization.sentences,
         controller: mycontroller,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),

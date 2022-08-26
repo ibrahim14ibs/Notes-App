@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes/pages/login.dart';
+
+import 'login.dart';
 
 class Success extends StatefulWidget {
   Success({Key? key}) : super(key: key);

@@ -4,17 +4,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:iconsax/iconsax.dart';
+import 'package:notes/app/auth/login.dart';
+import 'package:notes/app/notes/add.dart';
+import 'package:notes/app/notes/edit.dart';
+import 'package:notes/components/cardnote.dart';
+import 'package:notes/components/crud.dart';
 
-import 'package:notes/common/constants.dart';
-import 'package:notes/crud.dart';
+import 'package:notes/constants/constants.dart';
 import 'package:notes/main.dart';
 import 'package:notes/models/notemodel.dart';
-import 'package:notes/pages/add.dart';
-
-import 'package:notes/pages/cardnote.dart';
-import 'package:notes/pages/edit.dart';
-import 'package:notes/pages/login.dart';
-
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key, required this.title})
@@ -29,7 +27,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with Crud {
-
   getNotes() async {
     var response =
         await postRequest(linkViewNotes, {"id": prefs.getString("id")});
@@ -38,7 +35,6 @@ class _HomePageState extends State<HomePage> with Crud {
 
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -140,6 +136,7 @@ class _HomePageState extends State<HomePage> with Crud {
             return Center(child: Text("Loading ..."));
           }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: kSecondaryColor,
         elevation: 0,
         focusElevation: 0,
         hoverElevation: 0,

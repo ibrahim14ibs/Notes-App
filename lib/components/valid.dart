@@ -1,4 +1,4 @@
-import 'package:notes/common/constants.dart';
+import 'package:notes/constants/constants.dart';
 
 validInput(String val, int min, int max) {
   if (val.length > max) {

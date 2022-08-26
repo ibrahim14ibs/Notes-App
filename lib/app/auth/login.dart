@@ -1,12 +1,12 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:notes/common/constants.dart';
-import 'package:notes/pages/home_page.dart';
-import 'package:notes/pages/signup.dart';
-
-import '../crud.dart';
-import '../main.dart';
+import 'package:notes/app/app.dart';
+import 'package:notes/app/auth/signup.dart';
+import 'package:notes/app/home_page.dart';
+import 'package:notes/components/crud.dart';
+import 'package:notes/constants/constants.dart';
+import 'package:notes/main.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
       prefs.setString("email", response['data']['email']);
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) {
-        return HomePage(title: "");
+        return App();
       }), (route) => false);
     } else {
       AwesomeDialog(

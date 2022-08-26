@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notes/common/constants.dart';
-import 'package:notes/common/theme.dart';
-import 'package:notes/pages/app.dart';
-import 'package:notes/pages/login.dart';
+import 'package:notes/app/about_page.dart';
+import 'package:notes/constants/constants.dart';
+import 'package:notes/constants/theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'app/app.dart';
+import 'app/auth/login.dart';
 
 late SharedPreferences prefs;
 void main() async {

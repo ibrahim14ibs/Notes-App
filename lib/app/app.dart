@@ -1,11 +1,9 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:notes/common/constants.dart';
-import 'package:notes/pages/home_page.dart';
-import 'package:notes/pages/about_page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:notes/app/about_page.dart';
+import 'package:notes/app/home_page.dart';
+import 'package:notes/constants/constants.dart';
+
 
 
 class App extends StatefulWidget {

@@ -1,21 +1,23 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:notes/common/constants.dart';
-import 'package:notes/crud.dart';
-import 'package:notes/pages/customtextform.dart';
-import 'package:notes/pages/home_page.dart';
-import 'package:notes/pages/valid.dart';
+import 'package:notes/components/crud.dart';
+import 'package:notes/components/customtextform.dart';
+import 'package:notes/components/valid.dart';
+import 'package:notes/constants/constants.dart';
+import 'package:notes/main.dart';
 
-class EditNotes extends StatefulWidget {
-  final notes;
-  EditNotes({Key? key, this.notes}) : super(key: key);
+
+
+
+class AddNotes extends StatefulWidget {
+  AddNotes({Key? key}) : super(key: key);
 
   @override
-  State<EditNotes> createState() => _EditNotesState();
+  State<AddNotes> createState() => _AddNotesState();
 }
 
-class _EditNotesState extends State<EditNotes> with Crud {
+class _AddNotesState extends State<AddNotes> with Crud {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
   TextEditingController title = TextEditingController();
@@ -23,16 +25,15 @@ class _EditNotesState extends State<EditNotes> with Crud {
 
   bool isLoading = false;
 
-  editNotes() async {
+  addNotes() async {
     if (formstate.currentState!.validate()) {
       isLoading = true;
       setState(() {});
-      var response = await postRequest(linkEditNotes, {
+      var response = await postRequest(linkAddNotes, {
         "title": title.text,
         "content": content.text,
-        "id": widget.notes['notes_id'].toString(),
+        "id": prefs.getString("id")
       });
-
       isLoading = false;
       setState(() {});
       if (response['status'] == "success") {
@@ -44,17 +45,10 @@ class _EditNotesState extends State<EditNotes> with Crud {
   }
 
   @override
-  void initState() {
-    title.text = widget.notes['notes_title'];
-    content.text = widget.notes['notes_content'];
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Notes"),
+        title: Text("Add Notes"),
       ),
       body: isLoading == true
           ? Center(child: CircularProgressIndicator())
@@ -79,9 +73,9 @@ class _EditNotesState extends State<EditNotes> with Crud {
                     Container(height: 20),
                     ElevatedButton(
                       onPressed: () async {
-                        await editNotes();
+                        await addNotes();
                       },
-                      child: Text("Save"),
+                      child: Text("Add"),
                     )
                   ],
                 ),
