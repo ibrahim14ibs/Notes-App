@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> with Crud {
         ],
         flexibleSpace: FlexibleSpaceBar(
           title: Text(
-            'Notes',
+            'Notes App',
             style: TextStyle(
               fontWeight: FontWeight.w400,
             ),
